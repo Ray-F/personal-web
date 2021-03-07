@@ -6,7 +6,7 @@ const Container = styled.div`
   width: 100%;
   box-sizing: border-box;
   text-align: right;
-  padding: 0 20px;
+  padding: 0 50px;
   
   color: ${props => props.theme.colour.grey}
 `

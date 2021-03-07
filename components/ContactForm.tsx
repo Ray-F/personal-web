@@ -26,7 +26,7 @@ const EmailBox = styled.input`
 const MessageBox = styled.textarea`
   display: block;
   width: 100%;
-  height: 150px;
+  min-height: 150px;
   padding: 10px;
 
   border: 1px solid ${props => props.theme.colour.grey};

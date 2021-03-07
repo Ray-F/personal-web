@@ -8,7 +8,7 @@ const Container = styled.li`
   height: 150px;
   //background-color: ${props => props.theme.colour.lightblue};
   
-  margin: 0 10px;
+  margin: 0;
   border-radius: 5px;
 `;
 

@@ -1,6 +1,7 @@
 import Layout from "components/Layout";
 import profileImg from "assets/profile.jpg";
 import styled from "styled-components";
+import Link from "next/link";
 import Content from "../components/Content";
 import TechStackCard from "../components/TechStackCard";
 
@@ -9,34 +10,34 @@ const Container = styled.div`
   position: relative;
   margin: 0 auto 200px auto;
   width: 500px;
-  padding: 25px;
   max-width: 100%;
 
   transform: translateY(5vh);
-`
+`;
 
 const Img = styled.img`
   width: 200px;
   border-radius: 100px;
-`
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+`;
 
 const Title = styled.h1`
   color: ${props => props.theme.colour.darkgrey}
-`
+`;
 
 const Subtitle = styled.p`
   color: ${props => props.theme.colour.grey};
   line-height: 1.7rem;
-`
+`;
 
-const Square = styled.div`
+const SquareGraphic = styled.div`
   transform: rotate(8deg);
   background-color: ${props => props.theme.colour.lightblue};
-  width: 550px;
-  height: 280px;
+  width: 580px;
+  height: 300px;
   position: absolute;
-  top: 200px;
-  left: -30px;
+  top: 175px;
+  left: -50px;
   z-index: -1;
 
   transition-duration: 0.2s;
@@ -45,13 +46,30 @@ const Square = styled.div`
     transition-duration: 0.2s;
     opacity: 0.8;
   }
-`
+`;
+
+const DiagonalGraphic = styled.div`
+  position: absolute;
+  z-index: -1;
+  top: -100px;
+  left: -50px;
+
+  width: 120vw;
+  height: 650px;
+  transform: rotate(-8deg);
+
+  background-color: #f3f8fa;
+`;
 
 const TechStackUl = styled.ul`
   padding: 0;
-  margin: 0;
+  margin: 0 0;
   list-style: none;
-`
+`;
+
+const Hr = styled.hr`
+  margin: 50px 0 30px 0;
+`;
 
 
 export default function Home() {
@@ -59,22 +77,38 @@ export default function Home() {
     <Layout>
       <Container>
         <Img src={profileImg} alt={"profile photo"} />
-        <Title>Raymond Feng.</Title>
-        <Subtitle>Hello, my name is Raymond Feng. I am a DevOps engineer and business undergraduate.</Subtitle>
-        <p>B.Com / B.E &rarr; University of Auckland, New Zealand</p>
+        <div>
+          <Title>Raymond Feng.</Title>
+          <Subtitle>Hello, my name is Raymond Feng. I am a software engineer and business undergraduate. I am currently studing a B.E/B.Com cojoint at the University of Auckland.</Subtitle>
+        </div>
+        <Link href={"/projects"}><a>See some past projects &rarr;</a></Link>
 
-        <Square />
+        <SquareGraphic />
       </Container>
 
+      <DiagonalGraphic />
       <Content title={"My tech stack"}
-               subtitle={"These are the tech tools I have experience with"}>
+               subtitle={
+                 "This is the technology stack I have experience with across different projects and systems. " +
+                 "Experience levels vary anywhere from intermediate to proficient given any tool listed."}>
+
         <TechStackUl>
-          <TechStackCard name={"ReactJS"} style={{color: "rgb(89,211,248)"}}>
-            <i className="fab fa-react" />
+
+          <h3>For Web Development</h3>
+          <TechStackCard name={"ReactJS"} style={{ color: "rgb(89,211,248)" }}>
+            <img src={"https://cdn.worldvectorlogo.com/logos/react-2.svg"} alt={"React Logo"} />
           </TechStackCard>
 
-          <TechStackCard name={"NextJS"} style={{color: "rgb(89,211,248)"}}>
-            <img src={"https://cdn.worldvectorlogo.com/logos/next-js.svg"}  alt={"nextJS logo"} />
+          <TechStackCard name={"NextJS"} style={{ color: "rgb(89,211,248)" }}>
+            <img src={"https://cdn.worldvectorlogo.com/logos/next-js.svg"} alt={"nextJS logo"} />
+          </TechStackCard>
+
+          <TechStackCard name={"styled-components"}>
+            <img src={"https://avatars.githubusercontent.com/u/20658825?s=200&v=4"} alt={"StyledComponents Logo"} />
+          </TechStackCard>
+
+          <TechStackCard name={"MaterialUI"}>
+            <img src={"https://cdn.worldvectorlogo.com/logos/material-ui-1.svg"} alt={"Material UI Logo"} />
           </TechStackCard>
 
           <TechStackCard name={"ExpressJS"}>
@@ -89,15 +123,9 @@ export default function Home() {
             <img src={"https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg"} alt={"Express logo"} />
           </TechStackCard>
 
-          <TechStackCard name={"styled-components"}>
-            <img src={"https://avatars.githubusercontent.com/u/20658825?s=200&v=4"} alt={"StyledComponents Logo"} />
-          </TechStackCard>
+          <Hr />
 
-          <TechStackCard name={"MaterialUI"}>
-            <img src={"https://cdn.worldvectorlogo.com/logos/material-ui-1.svg"} alt={"Material UI Logo"} />
-          </TechStackCard>
-
-          <hr />
+          <h3>Other Languages and Frameworks</h3>
 
           <TechStackCard name={"Java"}>
             <img src={"https://cdn.worldvectorlogo.com/logos/jee-3.svg"} alt={"Java Logo"} />
@@ -111,6 +139,13 @@ export default function Home() {
             <img src={"https://cdn.worldvectorlogo.com/logos/kotlin-1.svg"} alt={"Kotlin JVM Logo"} />
           </TechStackCard>
 
+          <TechStackCard name={"Python 3"}>
+            <img src={"https://cdn.worldvectorlogo.com/logos/python-5.svg"} alt={"Python Logo"} />
+          </TechStackCard>
+
+          <TechStackCard name={"R for Stats"}>
+            <img src={"https://cdn.worldvectorlogo.com/logos/r-lang.svg"} alt={"R Logo"} />
+          </TechStackCard>
         </TechStackUl>
       </Content>
     </Layout>
