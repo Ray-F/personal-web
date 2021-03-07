@@ -1,5 +1,4 @@
 import Layout from "../components/Layout";
-import Content from "../components/Content";
 import ProjectContent from "../components/ProjectContent";
 
 import attendanceImg1 from "assets/projects/pyf-attendance-1.png";
