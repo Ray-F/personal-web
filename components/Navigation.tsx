@@ -8,8 +8,6 @@ import NavLink from "./NavLink";
 const Nav = styled.nav`
   position: relative;
   background-color: ${props => props.theme.colour.grey};
-  width: 110%;
-  left: -5%;
 
   padding: 0;
   margin: 0;
@@ -31,7 +29,7 @@ const MainLi = styled.li`
 
 const SocialUl = styled.ul`
   position: absolute;
-  right: 5%;
+  right: 0;
   top: 0;
   margin-right: 50px;
 `;
@@ -71,6 +69,7 @@ export default function Navigation() {
         <title>rayf.me</title>
         <meta charSet={"utf-8"} />
         <meta name={"author"} content={"Raymond Feng"} />
+        <meta name={"viewport"} content={"initial-scale=1.0"} />
       </Head>
 
       <Nav>

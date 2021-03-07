@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.li`
+  flex-grow: 1;
   vertical-align: top;
   display: inline-block;
   width: 150px;
   height: 150px;
-  //background-color: ${props => props.theme.colour.lightblue};
   
   margin: 0;
   border-radius: 5px;

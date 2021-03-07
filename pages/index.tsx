@@ -8,7 +8,7 @@ import TechStackCard from "../components/TechStackCard";
 const Container = styled.div`
   box-sizing: border-box;
   position: relative;
-  margin: 0 auto 200px auto;
+  margin: 50px auto 200px auto;
   width: 500px;
   max-width: 100%;
 
@@ -18,6 +18,7 @@ const Container = styled.div`
 const Img = styled.img`
   width: 200px;
   border-radius: 100px;
+  margin-left: 8px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 `;
 
@@ -31,11 +32,11 @@ const Subtitle = styled.p`
 `;
 
 const SquareGraphic = styled.div`
+  position: absolute;
   transform: rotate(8deg);
   background-color: ${props => props.theme.colour.lightblue};
   width: 580px;
   height: 300px;
-  position: absolute;
   top: 175px;
   left: -50px;
   z-index: -1;
@@ -51,10 +52,11 @@ const SquareGraphic = styled.div`
 const DiagonalGraphic = styled.div`
   position: absolute;
   z-index: -1;
-  top: -100px;
+  top: -200px;
   left: -50px;
 
-  width: 120vw;
+  min-width: 120vw;
+  width: 2500px;
   height: 650px;
   transform: rotate(-8deg);
 
@@ -65,7 +67,15 @@ const TechStackUl = styled.ul`
   padding: 0;
   margin: 0 0;
   list-style: none;
+  
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 `;
+
+const FlexSpacer = styled.div`
+  flex-grow: 50;
+`
 
 const Hr = styled.hr`
   margin: 50px 0 30px 0;
@@ -79,7 +89,7 @@ export default function Home() {
         <Img src={profileImg} alt={"profile photo"} />
         <div>
           <Title>Raymond Feng.</Title>
-          <Subtitle>Hello, my name is Raymond Feng. I am a software engineer and business undergraduate. I am currently studing a B.E/B.Com cojoint at the University of Auckland.</Subtitle>
+          <Subtitle>Hello, my name is Raymond Feng. I am a software engineer and business undergraduate. I am currently studying a B.E/B.Com conjoint at the University of Auckland, NZ.</Subtitle>
         </div>
         <Link href={"/projects"}><a>See some past projects &rarr;</a></Link>
 
@@ -92,9 +102,9 @@ export default function Home() {
                  "This is the technology stack I have experience with across different projects and systems. " +
                  "Experience levels vary anywhere from intermediate to proficient given any tool listed."}>
 
-        <TechStackUl>
+        <h3>For Web Development</h3>
 
-          <h3>For Web Development</h3>
+        <TechStackUl>
           <TechStackCard name={"ReactJS"} style={{ color: "rgb(89,211,248)" }}>
             <img src={"https://cdn.worldvectorlogo.com/logos/react-2.svg"} alt={"React Logo"} />
           </TechStackCard>
@@ -123,10 +133,12 @@ export default function Home() {
             <img src={"https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg"} alt={"Express logo"} />
           </TechStackCard>
 
-          <Hr />
+          <FlexSpacer />
 
-          <h3>Other Languages and Frameworks</h3>
-
+        </TechStackUl>
+        <Hr />
+        <h3>Other Languages and Frameworks</h3>
+        <TechStackUl>
           <TechStackCard name={"Java"}>
             <img src={"https://cdn.worldvectorlogo.com/logos/jee-3.svg"} alt={"Java Logo"} />
           </TechStackCard>
@@ -146,6 +158,8 @@ export default function Home() {
           <TechStackCard name={"R for Stats"}>
             <img src={"https://cdn.worldvectorlogo.com/logos/r-lang.svg"} alt={"R Logo"} />
           </TechStackCard>
+
+          <FlexSpacer />
         </TechStackUl>
       </Content>
     </Layout>
