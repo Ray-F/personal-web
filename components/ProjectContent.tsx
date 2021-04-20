@@ -8,11 +8,11 @@ const Container = styled.div`
   min-height: 100vh;
   box-sizing: border-box;
   padding-top: 50px;
-
-
+  padding-bottom: 50px;
 `;
 
 const Screenshots = styled.div`
+  padding-top: 20px;
   display: flex;
   flex-flow: row nowrap;
   align-items: start;
@@ -28,24 +28,46 @@ const Content = styled.div`
   margin: 0 auto;
 `
 
+const Desc = styled.p`
+  line-height: 1.5rem;
+`
+
 export default function ProjectContent({
                                          style,
                                          children,
+                                         timeline,
                                          title,
                                          description,
                                          link,
                                          type,
-                                       }: { style?: Object, children: React.ReactNode, title: string, description: string, link: string, type: string }) {
+                                         client,
+                                       }:
+                                         {
+                                           timeline?: string,
+                                           style?: Object,
+                                           children: React.ReactNode,
+                                           title: string,
+                                           description: string,
+                                           link: string,
+                                           type: string,
+                                           client: string
+                                         }) {
   return (
     <Container style={style}>
       <Content>
         <h3>{title}</h3>
-        <p>{description}</p>
+        {timeline ? (<p>Development period: {timeline}</p>) : null}
+        <Desc dangerouslySetInnerHTML={{__html: description}} />
+        <br />
+        <i><Desc dangerouslySetInnerHTML={{__html: client}} /></i>
       </Content>
 
       <Screenshots>
         {children}
       </Screenshots>
+
+
+
     </Container>
   );
 }

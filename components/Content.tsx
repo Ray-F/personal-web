@@ -15,7 +15,6 @@ const H4 = styled.h4`
   font-weight: normal;
   font-style: italic;
   line-height: 1.5rem;
-  max-width: 700px;
 `
 
 export default function Content({

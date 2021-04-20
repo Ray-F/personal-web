@@ -5,10 +5,8 @@ import styled from "styled-components";
 
 const Container = styled.div`
   position: relative;
-  padding: 0 25px 200px 25px;
-  min-height: 100vh;
+  padding: 0 25px 50px 25px;
   width: 100%;
-
   box-sizing: border-box;
 `;
 
@@ -27,7 +25,7 @@ export default function Layout({ children, title }: { children: ReactNode, title
         {title ? <H1>{title}</H1> : null}
         {children}
       </Container>
-      <Footer />
+      {/*<Footer />*/}
     </>
   );
 }

@@ -2,26 +2,24 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.li`
-  flex-grow: 1;
   vertical-align: top;
   display: inline-block;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   
-  margin: 0;
+  margin: 20px 20px;
   border-radius: 5px;
 `;
 
 const Symbol = styled.p`
   display: block;
   margin: 0;
-  font-size: 75px;
-  height: 110px;
+  height: 75px;
   padding: 15px 0 0 0;
   text-align: center;
   
   img {
-    width: 75px;
+    width: 50px;
     max-height: 75px;
     margin: 0 auto;
   }

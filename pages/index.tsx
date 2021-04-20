@@ -70,12 +70,8 @@ const TechStackUl = styled.ul`
   
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 `;
-
-const FlexSpacer = styled.div`
-  flex-grow: 50;
-`
 
 const Hr = styled.hr`
   margin: 50px 0 30px 0;
@@ -89,7 +85,7 @@ export default function Home() {
         <Img src={profileImg} alt={"profile photo"} />
         <div>
           <Title>Raymond Feng.</Title>
-          <Subtitle>Hello, my name is Raymond Feng. I am a software engineer and business undergraduate. I am currently studying a B.E/B.Com conjoint at the University of Auckland, NZ.</Subtitle>
+          <Subtitle>Hello, my name is Raymond. I am a software engineer and business undergraduate. I am currently studying a B.E/B.Com conjoint at the University of Auckland, NZ.</Subtitle>
         </div>
         <Link href={"/projects"}><a>See some past projects &rarr;</a></Link>
 
@@ -98,10 +94,8 @@ export default function Home() {
 
       <DiagonalGraphic />
       <Content title={"My tech stack"}
-               subtitle={
-                 "This is the technology stack I have experience with across different projects and systems. " +
-                 "Experience levels vary anywhere from intermediate to proficient given any tool listed."}>
-
+               subtitle={`Here are some technologies I have used across different projects. Experience levels vary from
+               intermediate to proficient.`}>
         <h3>For Web Development</h3>
 
         <TechStackUl>
@@ -132,9 +126,6 @@ export default function Home() {
           <TechStackCard name={"MongoDB"}>
             <img src={"https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg"} alt={"Express logo"} />
           </TechStackCard>
-
-          <FlexSpacer />
-
         </TechStackUl>
         <Hr />
         <h3>Other Languages and Frameworks</h3>
@@ -158,8 +149,6 @@ export default function Home() {
           <TechStackCard name={"R for Stats"}>
             <img src={"https://cdn.worldvectorlogo.com/logos/r-lang.svg"} alt={"R Logo"} />
           </TechStackCard>
-
-          <FlexSpacer />
         </TechStackUl>
       </Content>
     </Layout>
