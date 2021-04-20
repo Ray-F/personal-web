@@ -82,8 +82,6 @@ const MobileLi = styled.li`
   color: white;
 `;
 
-const MediaQueryStyled = styled(MediaQuery)``
-
 const NavMenuBtnStyled = styled(ReactBurgerMenu)`
   top: 20px;
   left: 20px;
@@ -119,21 +117,14 @@ export default function Navigation() {
           <MobileLi><NavLinkStyled href={'/contact'} currentPage={currentPage}>Contact</NavLinkStyled></MobileLi>
         </MobileUl>
 
-        <MediaQueryStyled maxWidth={MOBILE_SCREEN_SIZE - 1} onChange={() => setMenuOpen(false)}>
+        <MediaQuery maxWidth={MOBILE_SCREEN_SIZE - 1} onChange={() => setMenuOpen(false)}>
           <div>
             <NavMenuBtnStyled
               color={'white'} height={18} width={30}
               menuClicked={handleMenuClick} isOpen={isMenuOpen}
             />
           </div>
-        </MediaQueryStyled>
-        <MediaQueryStyled minWidth={MOBILE_SCREEN_SIZE}>
-          <MainUl>
-            <MainLi><NavLinkStyled href={'/'} currentPage={currentPage}>Home</NavLinkStyled></MainLi>
-            <MainLi><NavLinkStyled href={'/projects'} currentPage={currentPage}>Projects</NavLinkStyled></MainLi>
-            <MainLi><NavLinkStyled href={'/contact'} currentPage={currentPage}>Contact</NavLinkStyled></MainLi>
-          </MainUl>
-        </MediaQueryStyled>
+        </MediaQuery>
 
         <SocialUl>
           <SocialLi>
@@ -147,6 +138,14 @@ export default function Navigation() {
             </Link>
           </SocialLi>
         </SocialUl>
+
+        <MediaQuery minWidth={MOBILE_SCREEN_SIZE}>
+          <MainUl>
+            <MainLi><NavLinkStyled href={'/'} currentPage={currentPage}>Home</NavLinkStyled></MainLi>
+            <MainLi><NavLinkStyled href={'/projects'} currentPage={currentPage}>Projects</NavLinkStyled></MainLi>
+            <MainLi><NavLinkStyled href={'/contact'} currentPage={currentPage}>Contact</NavLinkStyled></MainLi>
+          </MainUl>
+        </MediaQuery>
       </Nav>
     </>
   );
