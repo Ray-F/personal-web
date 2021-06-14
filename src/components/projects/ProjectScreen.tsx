@@ -80,7 +80,7 @@ const ProjectScreen = ({ children, project }: { children: any, project: Project 
     <Container bg={project.theme.bgColour}>
       <Content colour={project.theme.colour}>
         <h1 className={'title'}>{project.name}</h1>
-        <h4 className={'work-period'}>{project.role} // {project.workPeriod} // <a className='link' href={project.link}><FontAwesomeIcon icon={faLink} /></a></h4>
+        <h4 className={'work-period'}>{project.role} {"//"} {project.workPeriod} {"//"} <a className='link' href={project.link}><FontAwesomeIcon icon={faLink} /></a></h4>
         <p className={'desc'}>{project.description}</p>
         <ul className={'features'}>
           {project.highlights.map((featureStr, key) => {

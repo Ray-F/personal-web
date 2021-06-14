@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import ProjectScreen from './ProjectScreen';
 import ReactElasticCarousel from 'react-elastic-carousel';
-import { faAngleDoubleRight, faAngleDown, faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Project } from '../../utils/Project';
 

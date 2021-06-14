@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import styled from 'styled-components';
 
-import { faGithub, faLinkedin, faMedium, faReact } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faReact } from '@fortawesome/free-brands-svg-icons';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
