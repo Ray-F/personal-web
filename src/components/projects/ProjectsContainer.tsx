@@ -244,13 +244,13 @@ const ProjectsContainer = () => {
                             ref={(ref) => carrouselRef = ref}
                             onChange={(item, index) => setCurrentPage(index)}>
         <ProjectScreen project={projects[0]}>
-          {imagesAttendance.map((element: any, index: number) => <ImgContainer>{element}</ImgContainer>)}
+          {imagesAttendance.map((element: any, index: number) => <ImgContainer key={index}>{element}</ImgContainer>)}
         </ProjectScreen>
         <ProjectScreen project={projects[1]}>
-          {imagesSpmedia.map((element: any, index: number) => <ImgContainer>{element}</ImgContainer>)}
+          {imagesSpmedia.map((element: any, index: number) => <ImgContainer key={index}>{element}</ImgContainer>)}
         </ProjectScreen>
         <ProjectScreen project={projects[2]}>
-          {imagesAspa.map((element: any, index: number) => <ImgContainer>{element}</ImgContainer>)}
+          {imagesAspa.map((element: any, index: number) => <ImgContainer key={index}>{element}</ImgContainer>)}
         </ProjectScreen>
       </ReactElasticCarousel>
 

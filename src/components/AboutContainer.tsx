@@ -206,11 +206,11 @@ const AboutContainer = () => {
               </TechStackRow>
             </TechSelection>
             <TechDesc>
-              I have a preference for <Accent>statically typed languages</Accent> for domain and business logic heavy applications.
+              I like <Accent>statically typed languages</Accent> and prefer working in the domain logic layer of applications.
               <br /><br />
               My current language of choice is either <Accent>Kotlin</Accent> or <Accent>Java</Accent>, and an
-              opinionated MERN stack (<a href={'https://github.com/ray-f/mern-template'}><FontAwesomeIcon icon={faLink} /></a>) for web applications.
-              I would use JavaScript (sometimes Typescript) for React and other front-end UI display, and primarily Typescript for backend server logic.<br />
+              opinionated MERN stack (<a href={'https://github.com/ray-f/mern-template'}><FontAwesomeIcon icon={faLink} /></a>) for fullstack web applications.
+              I would use JavaScript (sometimes Typescript) for React and other front-end UI display, and primarily Typescript for server-side business logic.<br />
             </TechDesc>
           </div>
         </ScrollAnimation>
