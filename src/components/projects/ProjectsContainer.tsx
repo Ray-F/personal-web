@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import ScrollAnimation from 'react-animate-on-scroll';
 import ProjectScreen from './ProjectScreen';
 import ReactElasticCarousel from 'react-elastic-carousel';
 import { faAngleDown, faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
@@ -239,7 +240,7 @@ const ProjectsContainer = ({scrollAction}:{scrollAction: any}) => {
                             ref={(ref) => carrouselRef = ref}
                             onChange={(item, index) => setCurrentPage(index)}>
         <ProjectScreen project={projects[0]}>
-          {imagesAttendance.map((element: any, index: number) => <ImgContainer key={index}>{element}</ImgContainer>)}
+          {imagesAttendance.map((element: any, index: number) => <ScrollAnimation animateIn={'animate__fadeIn'}><ImgContainer key={index}>{element}</ImgContainer></ScrollAnimation> )}
         </ProjectScreen>
         <ProjectScreen project={projects[1]}>
           {imagesSpmedia.map((element: any, index: number) => <ImgContainer key={index}>{element}</ImgContainer>)}

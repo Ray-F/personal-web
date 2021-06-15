@@ -1,7 +1,6 @@
 import React  from 'react';
 import styled from 'styled-components';
 import ScrollAnimation from 'react-animate-on-scroll';
-import 'animate.css/animate.min.css';
 
 import profile from '../resources/profile_picture.jpg';
 import StackIcon from './techstack/StackIcon';

@@ -5,6 +5,7 @@ import AboutContainer from '../../components/AboutContainer';
 import ContactContainer from '../../components/ContactForm';
 import { Footer } from '../../components/Footer';
 import ProjectsContainer from '../../components/projects/ProjectsContainer';
+import 'animate.css/animate.min.css';
 
 
 const ScreenContainer = styled.div`

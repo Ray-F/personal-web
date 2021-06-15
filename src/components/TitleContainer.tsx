@@ -1,6 +1,5 @@
 import 'particles.js/particles';
 import ScrollAnimation from 'react-animate-on-scroll';
-import 'animate.css/animate.min.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect } from 'react';
