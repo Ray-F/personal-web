@@ -1,11 +1,13 @@
 import 'particles.js/particles';
+import ScrollAnimation from 'react-animate-on-scroll';
+import 'animate.css/animate.min.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
-import particlesConfigPath from '../resources/particle-config.json'
+import particlesConfigPath from '../resources/particle-config.json';
 
 const Container = styled.div`
   position: absolute;
@@ -60,7 +62,7 @@ const ParticlesContainer = styled.div`
   right: 0;
   top: 0;
   bottom: 0;
-`
+`;
 
 const TitleContainer = ({buttonAction}: {buttonAction: any}) => {
   useEffect(() => {
@@ -76,8 +78,10 @@ const TitleContainer = ({buttonAction}: {buttonAction: any}) => {
 
       </ParticlesContainer>
     <Container>
-      <Title>Hello, I'm <TitleHighlight>Raymond Feng</TitleHighlight>. I am a software developer based in Auckland, New Zealand.</Title>
-      <Button onClick={buttonAction}>Learn more about me&nbsp;&nbsp;<FontAwesomeIcon icon={faAngleDown} /></Button>
+      <ScrollAnimation animateIn={"animate__fadeIn"} duration={1}>
+        <Title>Hello, I'm <TitleHighlight>Raymond Feng</TitleHighlight>. I am a software developer based in Auckland, New Zealand.</Title>
+        <Button onClick={buttonAction}>Learn more about me&nbsp;&nbsp;<FontAwesomeIcon icon={faAngleDown} /></Button>
+      </ScrollAnimation>
     </Container>
     </>
   );

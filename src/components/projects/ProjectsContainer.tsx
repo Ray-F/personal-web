@@ -23,7 +23,7 @@ interface ColourProps {
 const Container = styled.div<ColourProps>`
   position: relative;
   height: var(--page-height);
-  background-color: ${props => props.theme.main.light};
+  background-color: ${props => props.theme.grayscale.white};
   
   .rec-pagination {
     position: absolute;
@@ -238,7 +238,11 @@ const ProjectsContainer = () => {
       <Arrow colour={currentColour} onClick={prevPage} className={'left'}><FontAwesomeIcon icon={faAngleLeft} /></Arrow>
       <Arrow colour={currentColour} onClick={nextPage} className={'right'}><FontAwesomeIcon icon={faAngleRight} /></Arrow>
 
-      <ReactElasticCarousel isRTL={false} itemsToShow={1} showArrows={false} ref={(ref) => carrouselRef = ref} onChange={(item, index) => setCurrentPage(index)}>
+      <ReactElasticCarousel isRTL={false}
+                            itemsToShow={1}
+                            showArrows={false}
+                            ref={(ref) => carrouselRef = ref}
+                            onChange={(item, index) => setCurrentPage(index)}>
         <ProjectScreen project={projects[0]}>
           {imagesAttendance.map((element: any, index: number) => <ImgContainer>{element}</ImgContainer>)}
         </ProjectScreen>

@@ -1,5 +1,7 @@
 import React  from 'react';
 import styled from 'styled-components';
+import ScrollAnimation from 'react-animate-on-scroll';
+import 'animate.css/animate.min.css';
 
 import profile from '../resources/profile_picture.jpg';
 import StackIcon from './techstack/StackIcon';
@@ -23,7 +25,7 @@ const Container = styled.div`
 const Item = styled.div`
   box-sizing: border-box;
   --about-width: 800px;
-
+  
 
   @media screen and (max-width: ${props => props.theme.screen.lg}) {
     --about-width: 500px;
@@ -32,6 +34,7 @@ const Item = styled.div`
   max-width: 100%;
   min-height: var(--page-height);
 
+  overflow-x: hidden;
   flex-grow: 1;
 
   display: flex;
@@ -77,6 +80,7 @@ const Item = styled.div`
 `;
 
 const Content = styled.div`
+
   img {
     margin-top: 40px;
     margin-left: auto;
@@ -164,48 +168,52 @@ const AboutContainer = () => {
   return (
     <Container id={"about-container"}>
       <Item className={'dark'}>
-        <Content>
-          <img src={profile} alt={'Profile'} />
-          <p>I am currently a software developer at <a href={'https://www.supergenerous.co.nz/about'}>Supergenerous</a>, a fintech startup based in Auckland, New Zealand.
-          </p>
-          <p>I am passionate about good software design, architecture and writing maintainable code.</p>
-          <ul>
-            <Link faIcon={faLinkedin} link={"https://www.linkedin.com/in/raymond-feng-nz"} />
-            <Link faIcon={faGithub} link={"https://www.github.com/ray-f"} />
-            <Link faIcon={faEnvelope} link={"mailto:rf.raymondfeng@gmail.com"} />
-          </ul>
-          <DownArrow onClick={scrollToEnd}><FontAwesomeIcon icon={faAngleDown}/></DownArrow>
-        </Content>
+        <ScrollAnimation animateIn={"animate__fadeInRight"} duration={0.5} delay={50}>
+          <Content>
+            <img src={profile} alt={'Profile'} />
+            <p>I am currently a software developer at <a href={'https://www.supergenerous.co.nz/about'}>Supergenerous</a>, a fintech startup based in Auckland, New Zealand.
+            </p>
+            <p>I am passionate about good software design, architecture and writing maintainable code.</p>
+            <ul>
+              <Link faIcon={faLinkedin} link={"https://www.linkedin.com/in/raymond-feng-nz"} />
+              <Link faIcon={faGithub} link={"https://www.github.com/ray-f"} />
+              <Link faIcon={faEnvelope} link={"mailto:rf.raymondfeng@gmail.com"} />
+            </ul>
+            <DownArrow onClick={scrollToEnd}><FontAwesomeIcon icon={faAngleDown}/></DownArrow>
+          </Content>
+        </ScrollAnimation>
       </Item>
       <Item className={'tech'}>
-        <div>
-          <Title>My Tech Stack</Title>
-          <TechSelection>
-            <TechStackRow>
-              <StackIcon faIcon={faJava} />
-              <StackIcon name={'Kotlin'} />
-              <StackIcon faIcon={faPython} />
-              <StackIcon faIcon={faNodeJs} />
-            </TechStackRow>
+        <ScrollAnimation animateIn={'animate__fadeInLeft'} duration={0.5}>
+          <div>
+            <Title>My Tech Stack</Title>
+            <TechSelection>
+              <TechStackRow>
+                <StackIcon faIcon={faJava} />
+                <StackIcon name={'Kotlin'} />
+                <StackIcon faIcon={faPython} />
+                <StackIcon faIcon={faNodeJs} />
+              </TechStackRow>
 
-            <TechStackRow>
-              <StackIcon name={'typescript'} />
-              <StackIcon faIcon={faReact} />
-              <StackIcon name={'MaterialUI'} />
-              <StackIcon name={'Next'} />
-              <StackIcon name={'MongoDB'} />
-              <StackIcon name={'Express'} />
-              <StackIcon faIcon={faNode} />
-            </TechStackRow>
-          </TechSelection>
-          <TechDesc>
-            I have a preference for <Accent>statically typed languages</Accent> for domain and business logic heavy applications.
-            <br /><br />
-            My current language of choice is either <Accent>Kotlin</Accent> or <Accent>Java</Accent>, and an
-            opinionated MERN stack (<a href={'https://github.com/ray-f/mern-template'}><FontAwesomeIcon icon={faLink} /></a>) for web applications.
-            I would use JavaScript (sometimes Typescript) for React and other front-end UI display, and primarily Typescript for backend server logic.<br />
-          </TechDesc>
-        </div>
+              <TechStackRow>
+                <StackIcon name={'typescript'} />
+                <StackIcon faIcon={faReact} />
+                <StackIcon name={'MaterialUI'} />
+                <StackIcon name={'Next'} />
+                <StackIcon name={'MongoDB'} />
+                <StackIcon name={'Express'} />
+                <StackIcon faIcon={faNode} />
+              </TechStackRow>
+            </TechSelection>
+            <TechDesc>
+              I have a preference for <Accent>statically typed languages</Accent> for domain and business logic heavy applications.
+              <br /><br />
+              My current language of choice is either <Accent>Kotlin</Accent> or <Accent>Java</Accent>, and an
+              opinionated MERN stack (<a href={'https://github.com/ray-f/mern-template'}><FontAwesomeIcon icon={faLink} /></a>) for web applications.
+              I would use JavaScript (sometimes Typescript) for React and other front-end UI display, and primarily Typescript for backend server logic.<br />
+            </TechDesc>
+          </div>
+        </ScrollAnimation>
       </Item>
     </Container>
   );
