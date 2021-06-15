@@ -158,13 +158,7 @@ const DownArrow = styled.p`
   }
 `
 
-const AboutContainer = () => {
-
-  const scrollToEnd = () => {
-    const currentBottom = document.getElementById("about-container")!!.getBoundingClientRect().bottom;
-    window.scrollTo(0, window.scrollY + currentBottom);
-  }
-
+const AboutContainer = ({scrollAction}: {scrollAction: any}) => {
   return (
     <Container id={"about-container"}>
       <Item className={'dark'}>
@@ -179,7 +173,7 @@ const AboutContainer = () => {
               <Link faIcon={faGithub} link={"https://www.github.com/ray-f"} />
               <Link faIcon={faEnvelope} link={"mailto:rf.raymondfeng@gmail.com"} />
             </ul>
-            <DownArrow onClick={scrollToEnd}><FontAwesomeIcon icon={faAngleDown}/></DownArrow>
+            <DownArrow onClick={scrollAction}><FontAwesomeIcon icon={faAngleDown}/></DownArrow>
           </Content>
         </ScrollAnimation>
       </Item>

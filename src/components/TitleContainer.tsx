@@ -1,6 +1,7 @@
 import 'particles.js/particles';
 import ScrollAnimation from 'react-animate-on-scroll';
 import 'animate.css/animate.min.css';
+import smoothscroll from 'smoothscroll-polyfill';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect } from 'react';
@@ -64,7 +65,7 @@ const ParticlesContainer = styled.div`
   bottom: 0;
 `;
 
-const TitleContainer = ({buttonAction}: {buttonAction: any}) => {
+const TitleContainer = ({scrollAction}: {scrollAction: any}) => {
   useEffect(() => {
     setTimeout(() => {
       // @ts-ignore
@@ -80,7 +81,7 @@ const TitleContainer = ({buttonAction}: {buttonAction: any}) => {
     <Container>
       <ScrollAnimation animateIn={"animate__fadeIn"} duration={1}>
         <Title>Hello, I'm <TitleHighlight>Raymond Feng</TitleHighlight>. I am a software developer based in Auckland, New Zealand.</Title>
-        <Button onClick={buttonAction}>Learn more about me&nbsp;&nbsp;<FontAwesomeIcon icon={faAngleDown} /></Button>
+        <Button onClick={scrollAction}>Learn more about me&nbsp;&nbsp;<FontAwesomeIcon icon={faAngleDown} /></Button>
       </ScrollAnimation>
     </Container>
     </>

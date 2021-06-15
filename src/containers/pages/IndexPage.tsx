@@ -24,10 +24,10 @@ const CSS = styled.div<CSSProps>`
 `;
 
 enum Page {
-  Start,
-  About,
-  Projects,
-  Contact,
+  Start = 'title-screen',
+  About = 'about-screen',
+  Projects = 'projects-screen',
+  Contact = 'contact-screen',
 }
 
 export default function IndexPage() {
@@ -39,22 +39,25 @@ export default function IndexPage() {
 
 
   const scrollToSection = (section: Page) => {
-    window.scrollTo(0, section * window.visualViewport.height);
+    const currentBottom = document.getElementById(section)!!.getBoundingClientRect().top;
+    window.scrollBy({ top: currentBottom, left: 0, behavior: 'smooth' });
   };
 
   return (
     <>
       <CSS pageHeight={pageHeight}>
-        <ScreenContainer>
-          <TitleContainer buttonAction={() => scrollToSection(Page.About)} />
+        <ScreenContainer id={'title-screen'}>
+          <TitleContainer scrollAction={() => scrollToSection(Page.About)} />
         </ScreenContainer>
-        <ScreenContainer>
-          <AboutContainer />
+        <ScreenContainer id={'about-screen'}>
+          <AboutContainer scrollAction={() => scrollToSection(Page.Projects)}/>
         </ScreenContainer>
         <ScreenContainer id={"projects-screen"}>
-          <ProjectsContainer />
+          <ProjectsContainer scrollAction={() => scrollToSection(Page.Contact)}/>
         </ScreenContainer>
-        <ScreenContainer><ContactContainer /></ScreenContainer>
+        <ScreenContainer id={'contact-screen'}>
+          <ContactContainer />
+        </ScreenContainer>
         <Footer />
       </CSS>
     </>

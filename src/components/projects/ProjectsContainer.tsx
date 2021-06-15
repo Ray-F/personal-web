@@ -202,7 +202,7 @@ const imagesAspa = [
   <img src={aspaImg1} alt={"aspa website"} />,
 ]
 
-const ProjectsContainer = () => {
+const ProjectsContainer = ({scrollAction}:{scrollAction: any}) => {
   let [currentPage, setCurrentPage] = useState(0);
   let [currentColour, setCurrentColour] = useState('white');
 
@@ -213,11 +213,6 @@ const ProjectsContainer = () => {
   const numPages = projects.length;
 
   let carrouselRef: any = null;
-
-  const scrollToEnd = () => {
-    const currentBottom = document.getElementById("projects-container")!!.getBoundingClientRect().bottom;
-    window.scrollTo(0, window.scrollY + currentBottom);
-  }
 
   const prevPage = () => {
     const nextPage = currentPage === 0 ? numPages - 1 : currentPage - 1;
@@ -254,7 +249,7 @@ const ProjectsContainer = () => {
         </ProjectScreen>
       </ReactElasticCarousel>
 
-      <DownArrow colour={currentColour} onClick={scrollToEnd}><FontAwesomeIcon icon={faAngleDown}/></DownArrow>
+      <DownArrow colour={currentColour} onClick={scrollAction}><FontAwesomeIcon icon={faAngleDown}/></DownArrow>
 
     </Container>
   );

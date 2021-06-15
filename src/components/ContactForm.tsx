@@ -50,6 +50,7 @@ const MessageBox = styled.textarea`
   display: block;
   width: 100%;
   min-height: 150px;
+  max-height: calc(var(--page-height) * 0.70);
   padding: 10px;
 
   border: 1px solid ${props => props.theme.main.light};
@@ -106,7 +107,7 @@ export default function ContactForm() {
       setResponseMessage({ message: "Message sent successfully!", colour: "green" });
       email.value = '';
       message.value = '';
-      
+
       setTimeout(() => {
         setResponseMessage({});
       }, 3000);
@@ -114,7 +115,7 @@ export default function ContactForm() {
       send('contact_service', 'template_vg8jwp9', templateObject).then((err) => {
         if (err.status === 200) {
           console.log('Email sent!');
-          
+
 
 
         } else {
