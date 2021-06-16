@@ -19,16 +19,16 @@ const Container = styled.div`
 
   display: flex;
   flex-flow: row wrap;
+
+  --about-width: 500px;
+  
+  @media screen and (max-width: ${props => props.theme.screen.lg}) {
+    --about-width: 500px;
+  }
 `;
 
 const Item = styled.div`
   box-sizing: border-box;
-  --about-width: 800px;
-  
-
-  @media screen and (max-width: ${props => props.theme.screen.lg}) {
-    --about-width: 500px;
-  }
   
   max-width: 100%;
   min-height: var(--page-height);
@@ -158,9 +158,15 @@ const DownArrow = styled.p`
 `
 
 const AboutContainer = ({scrollAction}: {scrollAction: any}) => {
+  
+  const scrollActionInner = () => {
+    const currentBottom = document.getElementById('about-content-container')!!.getBoundingClientRect().bottom;
+    window.scrollBy({ top: currentBottom, left: 0, behavior: 'smooth' });
+  };
+  
   return (
-    <Container id={"about-container"}>
-      <Item className={'dark'}>
+    <Container>
+      <Item className={'dark'} id='about-content-container'>
         <ScrollAnimation animateIn={"animate__fadeInRight"} duration={0.5} delay={50}>
           <Content>
             <img src={profile} alt={'Profile'} />
@@ -172,7 +178,7 @@ const AboutContainer = ({scrollAction}: {scrollAction: any}) => {
               <Link faIcon={faGithub} link={"https://www.github.com/ray-f"} />
               <Link faIcon={faEnvelope} link={"mailto:rf.raymondfeng@gmail.com"} />
             </ul>
-            <DownArrow onClick={scrollAction}><FontAwesomeIcon icon={faAngleDown}/></DownArrow>
+            <DownArrow onClick={scrollActionInner}><FontAwesomeIcon icon={faAngleDown}/></DownArrow>
           </Content>
         </ScrollAnimation>
       </Item>

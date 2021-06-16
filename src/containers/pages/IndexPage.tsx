@@ -51,7 +51,7 @@ export default function IndexPage() {
           <TitleContainer scrollAction={() => scrollToSection(Page.About)} />
         </ScreenContainer>
         <ScreenContainer id={'about-screen'}>
-          <AboutContainer scrollAction={() => scrollToSection(Page.Projects)}/>
+          <AboutContainer scrollAction={() => scrollToSection(Page.Projects)} />
         </ScreenContainer>
         <ScreenContainer id={"projects-screen"}>
           <ProjectsContainer scrollAction={() => scrollToSection(Page.Contact)}/>

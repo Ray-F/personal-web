@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import ScrollAnimation from 'react-animate-on-scroll';
 import ProjectScreen from './ProjectScreen';
 import ReactElasticCarousel from 'react-elastic-carousel';
-import { faAngleDown, faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Project } from '../../utils/Project';
 
@@ -28,7 +28,7 @@ const Container = styled.div<ColourProps>`
   
   .rec-pagination {
     position: absolute;
-    bottom: 70px;
+    bottom: 30px;
     
     .rec-dot {
       box-shadow: none;
@@ -106,7 +106,7 @@ const Arrow = styled.div<ColourProps>`
     display: none;
   }
 `
-
+/* TODO: Not currently used 
 const DownArrow = styled.p<ColourProps>`
   position: absolute;
   right: 50%;
@@ -123,6 +123,7 @@ const DownArrow = styled.p<ColourProps>`
     cursor: pointer;
   }
 `
+*/
 
 const projects: Project[] = [
   {
@@ -240,7 +241,7 @@ const ProjectsContainer = ({scrollAction}:{scrollAction: any}) => {
                             ref={(ref) => carrouselRef = ref}
                             onChange={(item, index) => setCurrentPage(index)}>
         <ProjectScreen project={projects[0]}>
-          {imagesAttendance.map((element: any, index: number) => <ScrollAnimation animateIn={'animate__fadeIn'}><ImgContainer key={index}>{element}</ImgContainer></ScrollAnimation> )}
+          {imagesAttendance.map((element: any, index: number) => <ScrollAnimation key={index} animateIn={'animate__fadeIn'}><ImgContainer>{element}</ImgContainer></ScrollAnimation> )}
         </ProjectScreen>
         <ProjectScreen project={projects[1]}>
           {imagesSpmedia.map((element: any, index: number) => <ImgContainer key={index}>{element}</ImgContainer>)}
@@ -250,7 +251,7 @@ const ProjectsContainer = ({scrollAction}:{scrollAction: any}) => {
         </ProjectScreen>
       </ReactElasticCarousel>
 
-      <DownArrow colour={currentColour} onClick={scrollAction}><FontAwesomeIcon icon={faAngleDown}/></DownArrow>
+      {/* <DownArrow colour={currentColour} onClick={scrollAction}><FontAwesomeIcon icon={faAngleDown}/></DownArrow> */}
 
     </Container>
   );
