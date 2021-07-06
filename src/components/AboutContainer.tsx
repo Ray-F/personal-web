@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import ScrollAnimation from 'react-animate-on-scroll';
 
@@ -8,6 +8,8 @@ import { faGithub, faJava, faLinkedin, faNode, faNodeJs, faPython, faReact } fro
 import { faAngleDown, faEnvelope, faLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from './Footer';
+
+import flaskLogo from '../resources/logo/flask.png';
 
 const Container = styled.div`
   background-color: ${props => props.theme.main.dark};
@@ -38,8 +40,8 @@ const Item = styled.div`
 
   display: flex;
   align-items: center;
-  font-size: 1.3rem;
-  line-height: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
   
   padding: 50px 0;
   
@@ -158,12 +160,12 @@ const DownArrow = styled.p`
 `
 
 const AboutContainer = ({scrollAction}: {scrollAction: any}) => {
-  
+
   const scrollActionInner = () => {
     const currentBottom = document.getElementById('about-content-container')!!.getBoundingClientRect().bottom;
     window.scrollBy({ top: currentBottom, left: 0, behavior: 'smooth' });
   };
-  
+
   return (
     <Container>
       <Item className={'dark'} id='about-content-container'>
@@ -191,15 +193,15 @@ const AboutContainer = ({scrollAction}: {scrollAction: any}) => {
                 <StackIcon faIcon={faJava} />
                 <StackIcon name={'Kotlin'} />
                 <StackIcon faIcon={faPython} />
-                <StackIcon faIcon={faNodeJs} />
+                <StackIcon logoUrl={flaskLogo} />
+                <StackIcon name={'MongoDB'} />
               </TechStackRow>
 
               <TechStackRow>
                 <StackIcon name={'typescript'} />
+                <StackIcon faIcon={faNodeJs} />
                 <StackIcon faIcon={faReact} />
                 <StackIcon name={'MaterialUI'} />
-                <StackIcon name={'Next'} />
-                <StackIcon name={'MongoDB'} />
                 <StackIcon name={'Express'} />
                 <StackIcon faIcon={faNode} />
               </TechStackRow>

@@ -22,10 +22,13 @@ const Container = styled.div<ContainerProps>`
   transition: 0.2s;
 
   :hover {
-    cursor: pointer;
     transition: 0.2s;
     background-color: ${props => props.theme.main.light};
     color: white;
+    
+    img {
+      filter: brightness(4) grayscale(1);
+    }
   }
 
   color: ${props => props.theme.main.light};
@@ -42,7 +45,18 @@ const Container = styled.div<ContainerProps>`
   }
 `;
 
-const StackIcon = ({ faIcon, name }: { faIcon?: IconProp, name?: string }) => {
+const Img = styled.img`
+  margin: 20%;
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  display: flex;
+  flex-flow: column;
+  align-self: center;
+  justify-content: space-around;
+`
+
+const StackIcon = ({ faIcon, name, logoUrl }: { faIcon?: IconProp, name?: string, logoUrl?: string }) => {
   const [fontSize, setFontSize] = useState('3rem');
 
   useEffect(() => {
@@ -60,12 +74,11 @@ const StackIcon = ({ faIcon, name }: { faIcon?: IconProp, name?: string }) => {
 
   return (
     <Container fontSize={fontSize}>
-      <p>
         {faIcon ? (
-          <FontAwesomeIcon icon={faIcon} />
-        ) : null}
-        {name}
-      </p>
+          <p><FontAwesomeIcon icon={faIcon} /></p>
+        ) : logoUrl ? (
+          <Img src={logoUrl} alt={"Tech stack icon"} />
+        ) : (<p>{name}</p>)}
     </Container>
   );
 };
