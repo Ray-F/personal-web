@@ -8,9 +8,10 @@ interface ContainerProps {
 }
 
 const Container = styled.div<ContainerProps>`
+  --size: 90px;
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: var(--size);
+  height: var(--size);
 
   @media screen and (max-width: ${props => props.theme.screen.sm}) {
     width: 90px;

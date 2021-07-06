@@ -121,6 +121,7 @@ const TechSelection = styled.div`
 `;
 
 const TechDesc = styled.p`
+  margin-top: 30px;
   max-width: 550px;
   padding-right: 30px;
 `;
@@ -128,7 +129,7 @@ const TechDesc = styled.p`
 const TechStackRow = styled.div`
   display: flex;
   flex-flow: row wrap;
-  margin-bottom: 30px;
+  margin-bottom: 0;
 
   > * {
     margin-right: 10px;
@@ -207,11 +208,11 @@ const AboutContainer = ({scrollAction}: {scrollAction: any}) => {
               </TechStackRow>
             </TechSelection>
             <TechDesc>
-              I like <Accent>statically typed languages</Accent> and prefer working in the domain logic layer of applications.
+              I like <Accent>statically typed languages</Accent> and prefer working in the domain and infrastructure layers of applications.
               <br /><br />
-              My current language of choice is either <Accent>Kotlin</Accent> or <Accent>Java</Accent>, and an
+              My current tech stack of choice is either <Accent>Kotlin</Accent>, <Accent>Java</Accent>, or an
               opinionated MERN stack (<a href={'https://github.com/ray-f/mern-template'}><FontAwesomeIcon icon={faLink} /></a>) for fullstack web applications.
-              I would use JavaScript (sometimes Typescript) for React and other front-end UI display, and primarily Typescript for server-side business logic.<br />
+              I prefer JavaScript for front-end, and primarily Typescript for server-side business logic.<br />
             </TechDesc>
           </div>
         </ScrollAnimation>
