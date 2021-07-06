@@ -17,6 +17,11 @@ import aspaImg1 from '../../resources/projects/aspa-1.jpg';
 import aspaImg2 from '../../resources/projects/aspa-2.jpg';
 import aspaImg3 from '../../resources/projects/aspa-3.jpg';
 
+import developetsImg1 from '../../resources/projects/developets-1.png';
+import developetsImg2 from '../../resources/projects/developets-2.png';
+import developetsImg3 from '../../resources/projects/developets-3.png';
+
+
 interface ColourProps {
   colour: string
 }
@@ -106,7 +111,7 @@ const Arrow = styled.div<ColourProps>`
     display: none;
   }
 `
-/* TODO: Not currently used 
+/* TODO: Not currently used
 const DownArrow = styled.p<ColourProps>`
   position: absolute;
   right: 50%;
@@ -116,7 +121,7 @@ const DownArrow = styled.p<ColourProps>`
   font-size: 3rem;
 
   transition: 0.2s;
-  
+
   :hover {
     transition: 0.2s;
     color: ${props => props.theme.accent.blue};
@@ -142,15 +147,19 @@ const projects: Project[] = [
   },
 
   {
-    name: "Spprax Media Display Website",
-    link: "https://www.spprax.co.nz",
-    description: "A custom-built display website used to drive online traffic conversions. Uses EmailJS as a serverless lambda to send emails from contact form, and advanced google analytics to generate site performance insights.",
-    highlights: [],
-    technology: ["React", "EmailJS", "Google Analytics"],
-    role: "Personal",
-    workPeriod: "2021",
-    purpose: "nothing much",
-    theme: { bgColour: "#262626", colour: "white" }
+    name: "Developets – Virtual Mascot",
+    link: "https://github.com/ray-f/developets",
+    description: "A 48 hour Hackathon project that supports building good code standards in a professional team environment.",
+    highlights: [
+      "1st Place DEVS – Developers Society (University) Hackathon",
+      "Awarded best technical implementation",
+      "Centrality special prize (integrating NFT and Blockchain technology)",
+    ],
+    role: "Lead Developer",
+    workPeriod: "July, 2021",
+    technology: ["React", "Material-ui", "ExpressJS", "Blockchain NFT", "Typescript", "MongoDB"],
+    purpose: "",
+    theme: { bgColour: "rgb(44, 47, 51)", colour: "white" }
   },
 
   {
@@ -167,6 +176,19 @@ const projects: Project[] = [
     purpose: "nothing much",
     theme: { bgColour: "white", colour: "black" }
   },
+
+  {
+    name: "Spprax Media Display Website",
+    link: "https://www.spprax.co.nz",
+    description: "A custom-built display website used to drive online traffic conversions. Uses EmailJS as a serverless lambda to send emails from contact form, and advanced google analytics to generate site performance insights.",
+    highlights: [],
+    technology: ["React", "EmailJS", "Google Analytics"],
+    role: "Personal",
+    workPeriod: "2021",
+    purpose: "nothing much",
+    theme: { bgColour: "#262626", colour: "white" }
+  },
+
 ]
 
 
@@ -202,6 +224,17 @@ const imagesAspa = [
   <img src={aspaImg2} alt={"aspa website"} />,
   null,
   <img src={aspaImg1} alt={"aspa website"} />,
+]
+
+const imagesDevelopets = [
+  null,
+  <img src={developetsImg1} alt={"developets website"} />,
+  null,
+  null,
+  null,
+  <img src={developetsImg2} alt={"developets website"} />,
+  null,
+  <img src={developetsImg3} alt={"developets website"} />,
 ]
 
 const ProjectsContainer = ({scrollAction}:{scrollAction: any}) => {
@@ -244,10 +277,13 @@ const ProjectsContainer = ({scrollAction}:{scrollAction: any}) => {
           {imagesAttendance.map((element: any, index: number) => <ScrollAnimation key={index} animateIn={'animate__fadeIn'}><ImgContainer>{element}</ImgContainer></ScrollAnimation> )}
         </ProjectScreen>
         <ProjectScreen project={projects[1]}>
-          {imagesSpmedia.map((element: any, index: number) => <ImgContainer key={index}>{element}</ImgContainer>)}
+          {imagesDevelopets.map((element: any, index: number) => <ImgContainer key={index}>{element}</ImgContainer>)}
         </ProjectScreen>
         <ProjectScreen project={projects[2]}>
           {imagesAspa.map((element: any, index: number) => <ImgContainer key={index}>{element}</ImgContainer>)}
+        </ProjectScreen>
+        <ProjectScreen project={projects[3]}>
+          {imagesSpmedia.map((element: any, index: number) => <ImgContainer key={index}>{element}</ImgContainer>)}
         </ProjectScreen>
       </ReactElasticCarousel>
 
