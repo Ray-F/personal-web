@@ -173,9 +173,9 @@ const AboutContainer = ({scrollAction}: {scrollAction: any}) => {
         <ScrollAnimation animateIn={"animate__fadeInRight"} duration={0.5} delay={50}>
           <Content>
             <img src={profile} alt={'Profile'} />
-            <p>I am currently a software developer at <a href={'https://www.supergenerous.co.nz/about'}>Supergenerous</a>, a fintech startup based in Auckland, New Zealand.
+            <p>I am currently a finance analyst developer at <a href={'https://www.nzte.govt.nz'}>New Zealand Trade & Enterpise</a>, a government agency helping New Zealand businesses succeed internationally.
             </p>
-            <p>I am passionate about good software design, architecture and writing maintainable code.</p>
+            <p>I am passionate about good software design, architecture and writing maintainable code, particularly in fintech and cleantech domains.</p>
             <ul>
               <Link faIcon={faLinkedin} link={"https://www.linkedin.com/in/raymond-feng-nz"} />
               <Link faIcon={faGithub} link={"https://www.github.com/ray-f"} />
@@ -194,25 +194,27 @@ const AboutContainer = ({scrollAction}: {scrollAction: any}) => {
                 <StackIcon faIcon={faJava} />
                 <StackIcon name={'Kotlin'} />
                 <StackIcon faIcon={faPython} />
-                <StackIcon logoUrl={flaskLogo} />
-                <StackIcon name={'MongoDB'} />
+                {/*<StackIcon logoUrl={flaskLogo} />*/}
+                {/*<StackIcon name={'MongoDB'} />*/}
               </TechStackRow>
 
               <TechStackRow>
-                <StackIcon name={'typescript'} />
+                <StackIcon name={'TypeScript'} />
                 <StackIcon faIcon={faNodeJs} />
                 <StackIcon faIcon={faReact} />
-                <StackIcon name={'MaterialUI'} />
-                <StackIcon name={'Express'} />
-                <StackIcon faIcon={faNode} />
+                {/*<StackIcon name={'MaterialUI'} />*/}
+                {/*<StackIcon name={'Express'} />*/}
+                {/*<StackIcon faIcon={faNode} />*/}
               </TechStackRow>
             </TechSelection>
             <TechDesc>
-              I like <Accent>statically typed languages</Accent> and prefer working in the domain and infrastructure layers of applications.
+              I like <Accent>statically typed languages</Accent> and prefer working in business domain layers of applications (e.g. backend, automations).
               <br /><br />
-              My current tech stack of choice is either <Accent>Kotlin</Accent>, <Accent>Java</Accent>, or an
-              opinionated MERN stack (<a href={'https://github.com/ray-f/mern-template'}><FontAwesomeIcon icon={faLink} /></a>) for fullstack web applications.
-              I prefer JavaScript for front-end, and primarily Typescript for server-side business logic.<br />
+              My current tech stack of choice is either <Accent>Kotlin</Accent>, <Accent>Java</Accent> or <Accent>TypeScript</Accent> and have used all three in a workplace production environment.
+              For personal projects, I like to use an opinionated MERN stack (<a href={'https://github.com/ray-f/mern-template'}><FontAwesomeIcon icon={faLink} /></a>) to prototype something quickly.
+            </TechDesc>
+            <TechDesc>
+              Other technologies: Python, PHP, Flask, MongoDB, Azure Cloud, Google Cloud, Express, Jira, Material UI
             </TechDesc>
           </div>
         </ScrollAnimation>
