@@ -4,12 +4,11 @@ import ScrollAnimation from 'react-animate-on-scroll';
 
 import profile from '../resources/profile_picture.jpg';
 import StackIcon from './techstack/StackIcon';
-import { faGithub, faJava, faLinkedin, faNode, faNodeJs, faPython, faReact } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faJava, faLinkedin, faNodeJs, faPython, faReact } from '@fortawesome/free-brands-svg-icons';
 import { faAngleDown, faEnvelope, faLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from './Footer';
 
-import flaskLogo from '../resources/logo/flask.png';
 
 const Container = styled.div`
   background-color: ${props => props.theme.main.dark};
@@ -22,10 +21,10 @@ const Container = styled.div`
   display: flex;
   flex-flow: row wrap;
 
-  --about-width: 500px;
+  --about-width: 40%;
   
   @media screen and (max-width: ${props => props.theme.screen.lg}) {
-    --about-width: 500px;
+    --about-width: 550px;
   }
 `;
 
@@ -94,7 +93,7 @@ const Content = styled.div`
 
   p {
     text-align: right;
-    width: 350px;
+    width: 400px;
     max-width: calc(100vw - 75px);
   }
   
@@ -173,7 +172,7 @@ const AboutContainer = ({scrollAction}: {scrollAction: any}) => {
         <ScrollAnimation animateIn={"animate__fadeInRight"} duration={0.5} delay={50}>
           <Content>
             <img src={profile} alt={'Profile'} />
-            <p>I am currently a finance analyst developer at <a href={'https://www.nzte.govt.nz'}>New Zealand Trade & Enterpise</a>, a government agency helping New Zealand businesses succeed internationally.
+            <p>I am currently a full-stack developer with a core finance focus at <a href={'https://www.nzte.govt.nz'}>New Zealand Trade & Enterpise</a>, a government agency helping New Zealand businesses succeed internationally.
             </p>
             <p>I am passionate about good software design, architecture and writing maintainable code, particularly in fintech and cleantech domains.</p>
             <ul>
@@ -191,30 +190,25 @@ const AboutContainer = ({scrollAction}: {scrollAction: any}) => {
             <Title>My Tech Stack</Title>
             <TechSelection>
               <TechStackRow>
-                <StackIcon faIcon={faJava} />
+                <StackIcon faIcon={faJava} tooltip="Java" />
                 <StackIcon name={'Kotlin'} />
-                <StackIcon faIcon={faPython} />
-                {/*<StackIcon logoUrl={flaskLogo} />*/}
-                {/*<StackIcon name={'MongoDB'} />*/}
+                <StackIcon faIcon={faPython} tooltip="Python 3" />
               </TechStackRow>
 
               <TechStackRow>
                 <StackIcon name={'TypeScript'} />
-                <StackIcon faIcon={faNodeJs} />
-                <StackIcon faIcon={faReact} />
-                {/*<StackIcon name={'MaterialUI'} />*/}
-                {/*<StackIcon name={'Express'} />*/}
-                {/*<StackIcon faIcon={faNode} />*/}
+                <StackIcon faIcon={faNodeJs} tooltip="JavaScript" />
+                <StackIcon faIcon={faReact} tooltip="React" />
               </TechStackRow>
             </TechSelection>
             <TechDesc>
               I like <Accent>statically typed languages</Accent> and prefer working in business domain layers of applications (e.g. backend, automations).
               <br /><br />
-              My current tech stack of choice is either <Accent>Kotlin</Accent>, <Accent>Java</Accent> or <Accent>TypeScript</Accent> and have used all three in a workplace production environment.
+              My current language of choice is either <Accent>Kotlin</Accent> or <Accent>TypeScript</Accent> and have used both in a workplace production environment.
               For personal projects, I like to use an opinionated MERN stack (<a href={'https://github.com/ray-f/mern-template'}><FontAwesomeIcon icon={faLink} /></a>) to prototype something quickly.
             </TechDesc>
             <TechDesc>
-              Other technologies: Python, PHP, Flask, MongoDB, Azure Cloud, Google Cloud, Express, Jira, Material UI
+              Other technologies: PHP, C++, Flask, MongoDB, Azure Cloud, CosmosDB, GCP, Firebase, Express, Jira, Material UI
             </TechDesc>
           </div>
         </ScrollAnimation>

@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { faGithub, faLinkedin, faReact } from '@fortawesome/free-brands-svg-icons';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import tsLogo from '../resources/ts_logo.png';
 
 const Container = styled.div`
   position: relative;
@@ -61,6 +62,13 @@ const CopyrightContainer = styled.div`
   }
 `
 
+const TSLogo = styled.img`
+  height: 1rem;
+  position: relative;
+  top: 2px;
+  
+`
+
 const Link = ({link, faIcon}: {link: string, faIcon: IconProp}) => {
   return (
     <li>
@@ -79,7 +87,7 @@ const Footer = () => {
       </SocialsUl>
 
       <CopyrightContainer>
-        <p>Made using <FontAwesomeIcon icon={faReact} /> + TypeScript. Raymond Feng {new Date().getFullYear()}</p>
+        <p>Made using <FontAwesomeIcon icon={faReact} /> <TSLogo src={tsLogo} /> – Raymond Feng {new Date().getFullYear()}</p>
       </CopyrightContainer>
     </Container>
   );

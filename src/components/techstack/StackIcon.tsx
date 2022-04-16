@@ -57,7 +57,7 @@ const Img = styled.img`
   justify-content: space-around;
 `
 
-const StackIcon = ({ faIcon, name, logoUrl }: { faIcon?: IconProp, name?: string, logoUrl?: string }) => {
+const StackIcon = ({ faIcon, name, logoUrl, tooltip }: { faIcon?: IconProp, name?: string, logoUrl?: string, tooltip?: string }) => {
   const [fontSize, setFontSize] = useState('3rem');
 
   useEffect(() => {
@@ -74,7 +74,7 @@ const StackIcon = ({ faIcon, name, logoUrl }: { faIcon?: IconProp, name?: string
   }, [name]);
 
   return (
-    <Container fontSize={fontSize}>
+    <Container fontSize={fontSize} title={ name ?? tooltip ?? "" }>
         {faIcon ? (
           <p><FontAwesomeIcon icon={faIcon} /></p>
         ) : logoUrl ? (
