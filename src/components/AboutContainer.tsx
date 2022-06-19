@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ScrollAnimation from 'react-animate-on-scroll';
 
-import profile from '../resources/profile_picture.jpg';
+import profile from '../resources/profile.png';
 import StackIcon from './techstack/StackIcon';
 import { faGithub, faJava, faLinkedin, faNodeJs, faPython, faReact } from '@fortawesome/free-brands-svg-icons';
 import { faAngleDown, faEnvelope, faLink } from '@fortawesome/free-solid-svg-icons';
