@@ -83,7 +83,6 @@ const Footer = () => {
       <SocialsUl>
         <Link faIcon={faLinkedin} link={"https://www.linkedin.com/in/raymond-feng-nz"} />
         <Link faIcon={faGithub} link={"https://www.github.com/ray-f"} />
-        <Link faIcon={faEnvelope} link={"mailto:rf.raymondfeng@gmail.com"} />
       </SocialsUl>
 
       <CopyrightContainer>

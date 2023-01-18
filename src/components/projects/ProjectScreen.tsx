@@ -17,9 +17,9 @@ const Container = styled.div<ContainerProps>`
   display: grid;
   grid-template-columns: 1fr minmax(auto, 600px) 1fr;
   grid-template-rows: 25% 40% 35%;
-  grid-gap: 50px;
+  grid-gap: 40px;
   
-  grid-template-areas: "1 2 3" "4 content 5" "6 7 8";
+  grid-template-areas: "1 2 3" "6 content 3" "6 7 8";
 
   align-items: center;
   justify-content: center;

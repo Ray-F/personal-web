@@ -17,6 +17,9 @@ import aspaImg1 from '../../resources/projects/aspa-1.jpg';
 import aspaImg2 from '../../resources/projects/aspa-2.jpg';
 import aspaImg3 from '../../resources/projects/aspa-3.jpg';
 
+import dash1 from '../../resources/projects/dash-1.png';
+import dash2 from '../../resources/projects/dash-2.png';
+
 import developetsImg1 from '../../resources/projects/developets-1.png';
 import developetsImg2 from '../../resources/projects/developets-2.png';
 import developetsImg3 from '../../resources/projects/developets-3.png';
@@ -60,7 +63,7 @@ const ImgContainer = styled.div`
   overflow: hidden;
 
   img {
-    object-position: center;
+    object-position: center top;
     width: 100%;
     object-fit: cover;
     height: 100%;
@@ -132,6 +135,20 @@ const DownArrow = styled.p<ColourProps>`
 
 const projects: Project[] = [
   {
+    name: "Dash - Task Scheduler",
+    link: "https://github.com/Ray-F/se306-dash",
+    description: "A task scheduling tool built for a university course to solve and visualise complex node scheduling algorithms (AStar, Branch & Bound).",
+    highlights: [
+      "Implemented a pub/sub event pattern to listen for scheduler events",
+      "Best visualisation (design) in course",
+    ],
+    technology: ["Java", "JavaFX", "Flow API", "A*/B&B Algorithms", "Maven"],
+    workPeriod: "2022",
+    role: "Developer",
+    purpose: "test",
+    theme: { bgColour: "rgb(12, 8, 19)", colour: "white" }
+  },
+  {
     name: "Attendance Monitor",
     link: "https://github.com/ray-f/pyf-attendance",
     description: "A team management tool to monitor and track attendance information over time beyond a simple excel spreadsheet. Also useful for generating insights into membership base capacity and well-being through a traffic light attendance tracking system.\n",
@@ -189,6 +206,12 @@ const projects: Project[] = [
     theme: { bgColour: "#262626", colour: "white" }
   },
 
+]
+
+const imagesDash = [
+  null, null, <img src={dash2} alt={"Dash app"} />, 
+  null, null, 
+  null, <img src={dash2} alt={"Dash app"} />, null
 ]
 
 
@@ -274,15 +297,18 @@ const ProjectsContainer = ({scrollAction}:{scrollAction: any}) => {
                             ref={(ref) => carrouselRef = ref}
                             onChange={(item, index) => setCurrentPage(index)}>
         <ProjectScreen project={projects[0]}>
-          {imagesAttendance.map((element: any, index: number) => <ScrollAnimation key={index} animateIn={'animate__fadeIn'}><ImgContainer>{element}</ImgContainer></ScrollAnimation> )}
+          {imagesDash.map((element: any, index: number) => <ImgContainer>{element}</ImgContainer> )}
         </ProjectScreen>
         <ProjectScreen project={projects[1]}>
-          {imagesDevelopets.map((element: any, index: number) => <ImgContainer key={index}>{element}</ImgContainer>)}
+          {imagesAttendance.map((element: any, index: number) => <ImgContainer key={index}>{element}</ImgContainer>)}
         </ProjectScreen>
         <ProjectScreen project={projects[2]}>
-          {imagesAspa.map((element: any, index: number) => <ImgContainer key={index}>{element}</ImgContainer>)}
+          {imagesDevelopets.map((element: any, index: number) => <ImgContainer key={index}>{element}</ImgContainer>)}
         </ProjectScreen>
         <ProjectScreen project={projects[3]}>
+          {imagesAspa.map((element: any, index: number) => <ImgContainer key={index}>{element}</ImgContainer>)}
+        </ProjectScreen>
+        <ProjectScreen project={projects[4]}>
           {imagesSpmedia.map((element: any, index: number) => <ImgContainer key={index}>{element}</ImgContainer>)}
         </ProjectScreen>
       </ReactElasticCarousel>

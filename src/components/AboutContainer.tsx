@@ -24,7 +24,7 @@ const Container = styled.div`
   --about-width: 40%;
   
   @media screen and (max-width: ${props => props.theme.screen.lg}) {
-    --about-width: 550px;
+    --about-width: 560px;
   }
 `;
 
@@ -54,7 +54,7 @@ const Item = styled.div`
     width: var(--about-width);
     justify-content: flex-end;
 
-    padding-right: 100px;
+    padding-right: 80px;
 
     @media screen and (max-width: ${props => props.theme.screen.sm}) {
       padding-left: 20px;
@@ -64,7 +64,7 @@ const Item = styled.div`
   }
 
   &.tech {
-    padding-left: 100px;
+    padding-left: 80px;
     padding-right: 30px;
     width: calc(100% - var(--about-width));
     min-width: 580px;
@@ -85,7 +85,7 @@ const Content = styled.div`
     margin-top: 40px;
     margin-left: auto;
     display: block;
-    --size: 250px;
+    --size: 200px;
     width: var(--size);
     height: var(--size);
     border-radius: calc(var(--size) / 2);
@@ -93,7 +93,7 @@ const Content = styled.div`
 
   p {
     text-align: right;
-    width: 400px;
+    width: 430px;
     max-width: calc(100vw - 75px);
   }
   
@@ -121,7 +121,7 @@ const TechSelection = styled.div`
 
 const TechDesc = styled.p`
   margin-top: 30px;
-  max-width: 550px;
+  max-width: 580px;
   padding-right: 30px;
 `;
 
@@ -172,13 +172,14 @@ const AboutContainer = ({scrollAction}: {scrollAction: any}) => {
         <ScrollAnimation animateIn={"animate__fadeInRight"} duration={0.5} delay={50}>
           <Content>
             <img src={profile} alt={'Profile'} />
-            <p>I am currently a full-stack developer with a core finance focus at <a href={'https://www.nzte.govt.nz'}>New Zealand Trade & Enterpise</a>, a government agency helping New Zealand businesses succeed internationally.
+            <p>
+              I am a software developer at <a href={'https://www.optiver.com.au'}>Optiver</a>, a fintech working on financial markets technology based in Sydney, Australia.
+              I was previously a developer at the government agency <a href={'https://nzte.govt.nz'}>NZ Trade & Enterprise</a> helping New Zealand businesses succeed internationally.
             </p>
-            <p>I am passionate about good software design, architecture and writing maintainable code, particularly in fintech and cleantech domains.</p>
+            <p>I am passionate about good software design, architecture and writing maintainable code – particularly in fintech domains.</p>
             <ul>
               <Link faIcon={faLinkedin} link={"https://www.linkedin.com/in/raymond-feng-nz"} />
               <Link faIcon={faGithub} link={"https://www.github.com/ray-f"} />
-              <Link faIcon={faEnvelope} link={"mailto:rf.raymondfeng@gmail.com"} />
             </ul>
             <DownArrow onClick={scrollActionInner}><FontAwesomeIcon icon={faAngleDown}/></DownArrow>
           </Content>
@@ -192,23 +193,23 @@ const AboutContainer = ({scrollAction}: {scrollAction: any}) => {
               <TechStackRow>
                 <StackIcon faIcon={faJava} tooltip="Java" />
                 <StackIcon name={'Kotlin'} />
-                <StackIcon faIcon={faPython} tooltip="Python 3" />
+                <StackIcon name={'C++'} />
               </TechStackRow>
 
               <TechStackRow>
+                <StackIcon faIcon={faPython} tooltip="Python 3" />
                 <StackIcon name={'TypeScript'} />
-                <StackIcon faIcon={faNodeJs} tooltip="JavaScript" />
-                <StackIcon faIcon={faReact} tooltip="React" />
+                <StackIcon faIcon={faNodeJs} tooltip="React / JS" />
               </TechStackRow>
             </TechSelection>
             <TechDesc>
-              I like <Accent>statically typed languages</Accent> and prefer working in business domain layers of applications (e.g. backend, automations).
+              I like <Accent>statically typed languages</Accent> and prefer working in business domain layers of applications (e.g. APIs, automations, microservices).
               <br /><br />
-              My current language of choice is either <Accent>Kotlin</Accent> or <Accent>TypeScript</Accent> and have used both in a workplace production environment.
-              For personal projects, I like to use an opinionated MERN stack (<a href={'https://github.com/ray-f/mern-template'}><FontAwesomeIcon icon={faLink} /></a>) to prototype something quickly.
+              My primary languages are <Accent>Kotlin/Java</Accent> and <Accent>TypeScript</Accent>, having used both of these alongside <Accent>C++</Accent> and <Accent>Python</Accent> for professional, production grade code.
+              For personal projects, I like to use an opinionated MERN stack (<a href={'https://github.com/ray-f/mern-template'}><FontAwesomeIcon icon={faLink} /></a>) to prototype solutions.
             </TechDesc>
             <TechDesc>
-              Other technologies: PHP, C++, Flask, MongoDB, Azure Cloud, CosmosDB, GCP, Firebase, Express, Jira, Material UI
+              Other technologies: Git, React, Express, Flask, MongoDB, Azure Cloud, CosmosDB, GCP, Jira
             </TechDesc>
           </div>
         </ScrollAnimation>
