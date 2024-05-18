@@ -173,7 +173,7 @@ const AboutContainer = ({scrollAction}: {scrollAction: any}) => {
           <Content>
             <img src={profile} alt={'Profile'} />
             <p>
-              I am a software developer at <a href={'https://www.optiver.com.au'}>Optiver</a>, a fintech working on financial markets technology based in Sydney, Australia.
+              I am a software developer at <a href={'https://www.optiver.com.au'}>Optiver</a>, working on financial markets technology based in Sydney, Australia.
               I was previously a developer at the government agency <a href={'https://nzte.govt.nz'}>NZ Trade & Enterprise</a> helping New Zealand businesses succeed internationally.
             </p>
             <p>I am passionate about good software design, architecture and writing maintainable code – particularly in fintech domains.</p>
@@ -205,8 +205,7 @@ const AboutContainer = ({scrollAction}: {scrollAction: any}) => {
             <TechDesc>
               I like <Accent>statically typed languages</Accent> and prefer working in business domain layers of applications (e.g. APIs, automations, microservices).
               <br /><br />
-              My primary languages are <Accent>Kotlin/Java</Accent> and <Accent>TypeScript</Accent>, having used both of these alongside <Accent>C++</Accent> and <Accent>Python</Accent> for professional, production grade code.
-              For personal projects, I like to use an opinionated MERN stack (<a href={'https://github.com/ray-f/mern-template'}><FontAwesomeIcon icon={faLink} /></a>) to prototype solutions.
+              I am comfortable with many programming languages, including C++, Python, Kotlin, Java and TypeScript, having used these professionally to build production systems in various roles.
             </TechDesc>
             <TechDesc>
               Other technologies: Git, React, Express, Flask, MongoDB, Azure Cloud, CosmosDB, GCP, Jira

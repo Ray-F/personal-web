@@ -78,7 +78,7 @@ const TitleContainer = ({scrollAction}: {scrollAction: any}) => {
       </ParticlesContainer>
     <Container>
       <ScrollAnimation animateIn={"animate__fadeIn"} duration={1}>
-        <Title>Hello, I'm <TitleHighlight>Raymond Feng</TitleHighlight>. I am a software developer based in Auckland, New Zealand.</Title>
+        <Title>Hello, I'm <TitleHighlight>Raymond Feng</TitleHighlight>. I am a software engineer based in Sydney, Australia.</Title>
         <Button onClick={scrollAction}>Learn more about me&nbsp;&nbsp;<FontAwesomeIcon icon={faAngleDown} /></Button>
       </ScrollAnimation>
     </Container>
